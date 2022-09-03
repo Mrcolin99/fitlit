@@ -54,7 +54,13 @@ Webpack is kept in the *dist* folder along with our `index.html`.
 
 #### Celebrations
 
+Utilizing `.fetch()` successfully along with `Promise.all()` and making our API calls dynamic with interpolation were an overall success and a large victory for our conceptual understanding of network requests. This was a difficult concept to understand and even more so to implement, but working together we got it working and we all checked-in with one another to make sure we all had an understanding before we moved forward with the rest of the project. The experience with this iteration was an overall success in many venues!
+
 #### Challenges
+
+Working with/around Webpack gave us a little hiccup in understanding how the repository was set up -- but after clarification from our PM we were able to undo those hiccups and move forward with a functional and successfully compiling page. 
+
+Another challenge was implementing the Hydration method to display on the DOM the last week's water drank in ozs per day, where we went through MANY possible iterations of that function and had one of our mentors come in and help guide us in the right direction -- we were almost there on our own, but a fresh set of eyes helped us to achieve what we were ultimately looking for. Thank you Alia!
 
 ### Credits
 
