@@ -1,5 +1,9 @@
 import { expect } from "chai";
-import Sleep from "../src/data/sleep-data";
+import sleepData from "../src/data/sleep-data";
+import Sleep from "../src/sleep.js"
+
+const mockSleepData = sleepData;
+
 
 describe("Sleep", () => {
     let userSleep;
@@ -8,11 +12,11 @@ describe("Sleep", () => {
         userSleep = new Sleep(1, mockSleepData);
     });
 
-    it.skip("should be a function", () => {
+    it("should be a function", () => {
         expect(Sleep).to.be.a("function");
     });
 
-    it.skip("should be an instance of Sleep", () => {
+    it("should be an instance of Sleep", () => {
         expect(userSleep).to.be.an.instanceOf(Sleep);
     });
 
