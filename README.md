@@ -1,78 +1,67 @@
-# FitLit Starter Kit
+# FITLIT!
 
-The details of this project are outline in [this project spec](http://frontend.turing.io/projects/fitlit.html).
+We are students at Turing School of Software & Design, and this is Part One of our group project for our second inning of the program.
 
-## Setup
+*Group Members*
+- Dana Chapman (They/She)
+- Jeffrey Cook (He/Him)
+- Colin Ciervo (He/Him)
 
-1. Within your group, decide on one person to have the project repository (repo) on their GitHub account. Then, that person should fork this repo - on the top right corner of this page, click the **Fork** button.
-1. Both memebers of the group should clone down the _forked_ repo. Since you don't want to name your project "activity-tracker-starter", you can use an optional argument when you run git clone (you replace the [...] with the terminal command arguments): `git clone [remote-address] [what you want to name the repo]`
-1. Once you have cloned the repo, change into the directory and install the project dependencies. Run `npm install` to install project dependencies.
-1. Run `npm start` in the terminal to see the HTML page (you should see some boilerplate HTML displayed on the page).  `Control + C` is the command to stop running the local server.  Closing the terminal without stopping the server first could allow the server to continue to run in the background and cause problems. This command is not specific to Webpack; make note of it for future use.   
-1. Make sure both members of your team are collaborators on the forked repo.  
-1. Do not run `npm audit fix --force`.  This will update to the latest version of packages.  We need to be using `webpack-dev-server@3.11.2` which is not the latest version.  If you start to run into Webpack errors, first check that all group members are using the correct version.  
+With this project we are creating a wellness tracker called **FitLit** that shares a user's account information, their step goals, hydration intake, and sleep statistics. Our major foci were implementing ES6 classes that communicate with one another, utilizing newly learned object and array prototype methods to perform data manipulation, implementing test suites to ensure Class functionality, and using network requests via `.fetch()` for the first time, and more.
 
-## Testing
+Aside from implementation of Webpack from the starter repo we forked - [link to that repo here](https://github.com/turingschool-examples/fitlit-starter-kit) - and an initial data file to help us create the User and UserRepository files, we created everything ourselves by utlizing our personal strengths and everything we've learned in Turing thus far.
 
-There is no boilerplate for testing in this starter-kit repo. You will need to set this up yourself. However, if you ran `npm install`, then the tooling you need to start testing is already installed (`mocha` and `chai`).
+[Link to Turing's FitLit Project Spec](https://frontend.turing.edu/projects/Fitlit-part-one.html)
 
+[Link to Group's Daily Retro Minutes](https://docs.google.com/document/d/1GyWFpG0hR6I5k_obBsS_9of9AtT1RyX9Q5Hht21H0o8/edit?usp=sharing)
 
-## Data Model
+<!-- Placeholder Gif -->
+![gif of GitLit web page scrolling up and down](https://media.giphy.com/media/EvPI8mfauNUGi9nz74/giphy.gif)
 
-**Users**
+## Set-up for your Local Machine
 
-```
-[
-  {
-    "id": [number],
-    "name": [string],
-    "address": [string],
-    "email": [string],
-    "strideLength": [number - feet],
-    "dailyStepGoal": [number - steps],
-    "friends": [array - one-way connection to other user(s)]
-  },
-  ...more user data
-]
-```
+1. Clone down to your local machine
+2. Run `npm start` in your CLI
+3. Visit `localhost:8080` linked in the CLI to view the app
 
-**Activity**
+## Technologies Used
 
-```
-[
-  {
-    "userID": [number],
-    "date": [string YYYY/MM/DD],
-    "numSteps": [number - steps],
-    "minutesActive": [number - minutes],
-    "flightsOfStairs": [number - flights]
-  },
-  ...more activity data
-]
-```
+1. HTML
+2. CSS
+3. JavaScript
+4. Testing: Mocha/Chai
 
-**Hydration**
+## Code Architecture
 
-```
-[
-  {
-    "userID": [number],
-    "date": [string YYYY/MM/DD],
-    "numOunces": [number - ounces]
-  },
-  ...more hydration data
-]
-```
+The *src* folder contains:
 
-**Sleep**
+- Classes utilized in this project: `UserRepository.js`, `User.js`, `Hydration.js`, and `Sleep.js`
+- `apiCalls.js` which holds our `.fetch()` and `Promise.all()`
+- `scripts.js` where all of our DOM manipulation is held
 
-```
-[
-  {
-    "userID": [number],
-    "date": [string YYYY/MM/DD],
-    "hoursSlept": [number - hours],
-    "sleepQuality": [number - unitless]
-  },
-  ...more sleep data
-]
-```
+The *test* folder holds all of our accompanying test-files for our Classes.
+
+The *data* folder contains our sample datasets for our test-files to pull from.
+
+Webpack is kept in the *dist* folder along with our `index.html`.
+
+## Future Features
+
+1. Implementing `chart.js` for future graphical representations of user data.
+2. Either adding a dropdown menu or a filter-user button to manually choose a user's information to view on the page, instead of needing to reload the entire page for the changes to take effect.
+
+## Celebrations & Challenges
+
+#### Celebrations
+
+Utilizing `.fetch()` successfully along with `Promise.all()` and making our API calls dynamic with interpolation were an overall success and a large victory for our conceptual understanding of network requests. This was a difficult concept to understand and even more so to implement, but working together we got it working and we all checked-in with one another to make sure we all had an understanding before we moved forward with the rest of the project. The experience with this iteration was an overall success in many venues!
+
+#### Challenges
+
+Working with/around Webpack gave us a little hiccup in understanding how the repository was set up -- but after clarification from our PM we were able to undo those hiccups and move forward with a functional and successfully compiling page. 
+
+Another challenge was implementing the Hydration method to display on the DOM the last week's water drank in ozs per day, where we went through MANY possible iterations of that function and had one of our mentors come in and help guide us in the right direction -- we were almost there on our own, but a fresh set of eyes helped us to achieve what we were ultimately looking for. Thank you Alia!
+
+### Credits
+
+[Link to Unsplash Background Image](https://unsplash.com/photos/F2qh3yjz6Jk)
