@@ -11,6 +11,10 @@ Group Members -
 
 ## Set-up for your Local Machine
 
+1. Clone down to your local machine
+2. Run `npm start` in your CLI
+3. Visit `localhost:8080` linked in the CLI to view the app
+
 ## Technologies Used
 
 1. HTML
@@ -20,9 +24,27 @@ Group Members -
 
 ## Code Architecture
 
+The *src* folder contains:
+
+- Classes utilized in this project: `UserRepository.js`, `User.js`, `Hydration.js`, and `Sleep.js`
+- `apiCalls.js` which holds our `.fetch()` and `Promise.all()`
+- `scripts.js` where all of our DOM manipulation is held
+
+The *test* folder holds all of our accompanying test-files for our Classes.
+
+The *data* folder contains our sample datasets for our test-files to pull from.
+
+Webpack is kept in the *dist* folder along with our `index.html`.
+
 ## Future Features
 
-## Challenges & Celebrations
+1. Implementing `chart.js` for future graphical representations of user data.
+
+## Celebrations & Challenges
+
+#### Celebrations
+
+#### Challenges
 
 ### Credits
 
