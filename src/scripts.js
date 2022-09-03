@@ -39,7 +39,6 @@ const getRandomIndex = array => {
 
 const fetchApiCalls = userID => {
   apiCalls.fetchData().then(data => {
-    console.log(data);
     let userData = data[0].userData;
     let hydrationData = data[1].hydrationData;
     let sleepData = data[2].sleepData;
@@ -65,8 +64,8 @@ function loadHandler() {
   waterForTheDay();
   waterForTheWeek();
   showDailyHoursSlept();
-  // showDailyQuality();
-  // showWeeklyHoursSlept();
+  showDailyQuality();
+  showWeeklyHoursSlept();
   // showWeeklyQuality();
   // showAllTimeHoursSlept();
   // showAllTimeQuality();
@@ -108,9 +107,18 @@ function showDailyHoursSlept() {
   userSleptDaily.innerHTML = `Today's Hours Slept: ${dailyHours}`;
 };
 
-// function showDailyQuality
+function showDailyQuality() {
+  let dailyQuality = sleep.getSleepQualityPerDay(sleep.date);
+  userQualityDaily.innerHTML = `Today's Sleep Quality: ${dailyQuality}`;
+}
 
-// function showWeeklyHoursSlept
+function showWeeklyHoursSlept() {
+  const weeklySleep = sleep.getSleepForTheWeek(sleep.date);
+  userSleptWeekly.innerHTML = `This Week's Hours Slept: <br/>`
+  weeklySleep.date.forEach((value, i) => {
+    userSleptWeekly.innerHTML += `Date: ${value}, Hours: ${weeklySleep.hoursSlept[i]} <br/>`
+  })
+}
 
 // function showWeeklyQuality
 
