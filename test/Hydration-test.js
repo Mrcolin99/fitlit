@@ -1,4 +1,4 @@
-import {expect} from "chai";
+import { expect } from "chai";
 import Hydration from "../src/Hydration";
 import hydrationData from "../src/data/hydration-data";
 

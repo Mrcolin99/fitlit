@@ -9,9 +9,9 @@ class Hydration {
     this.data = hydrationData;
   };
 
-  setUserHydrateData (hydrationData) {
+  setUserHydrateData(hydrationData) {
     const userHydrate = hydrationData.filter(userHydrateData => {
-      if(userHydrateData.userID === this.userID) {
+      if (userHydrateData.userID === this.userID) {
         return userHydrateData;
       }
     });
@@ -20,20 +20,20 @@ class Hydration {
   };
   returnDailyHydrateAvg() {
     const hydrationPerDay = this.data.map(hydration => {
-      return hydration.numOunces
+      return hydration.numOunces;
     })
     const hydrationAvgPerDay = hydrationPerDay.reduce((totalOunces, currentOunces) => {
-      return totalOunces + currentOunces
+      return totalOunces + currentOunces;
     }, 0)
     return Math.round(hydrationAvgPerDay / this.data.length)
   };
   returnOuncesByDate(thisDate) {
-    const ounceByDate = this.userHydrateData.find(({date}) => date === thisDate)
-    return ounceByDate.numOunces
+    const ounceByDate = this.userHydrateData.find(({ date }) => date === thisDate);
+    return ounceByDate.numOunces;
   };
   returnOuncesByWeek(date) {
     const startDate = this.userHydrateData.findIndex(currentDate => {
-      return currentDate.date === date
+      return currentDate.date === date;
     });
     const weekData = this.userHydrateData.slice(startDate, startDate + 7).reverse();
     const weeklyIntake = {
