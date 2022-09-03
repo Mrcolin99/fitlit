@@ -6,6 +6,8 @@ import './images/turing-logo.png'
 import UserRepository from './UserRepository';
 import User from './User';
 import apiCalls from './apiCalls';
+import Hydration from './Hydration';
+import hydrationData from './data/hydration-data';
 
 // Query Selectors
 const userName = document.querySelector("#user-info-name");
@@ -13,13 +15,14 @@ const userAddress = document.querySelector("#user-info-address");
 const userEmail = document.querySelector("#user-info-email");
 const userStride = document.querySelector("#user-info-stride");
 const userFriends = document.querySelector("#user-info-friends");
-const userCard = document.querySelector("#user-info-card");
 const userWelcome = document.querySelector("#nav-user-name");
 const userStepsAverage = document.querySelector("#user-step-average"); // Single User
-const overallStepsAverage = document.querySelector("#step-goal-average"); // All Users
+const overallStepsAverage = document.querySelector("#step-goal-average");
+const todayWater = document.querySelector("#user-hydration-daily")
+const weeksWater = document.querySelector("#user-hydration-weekly")
 
 // Instances
-let user, userRepo;
+let user, userRepo, hydration;
 
 // Functions
 const getRandomIndex = array => {
@@ -28,8 +31,9 @@ const getRandomIndex = array => {
 
 const fetchApiCalls = userID => {
   apiCalls.fetchData().then(data => {
-    //console.log(data);
+    console.log(data);
     let userData = data[0].userData;
+    let hydrationData = data[1].hydrationData;
     let id;
     if(userID === "load") {
       id = getRandomIndex(userData);
@@ -38,6 +42,7 @@ const fetchApiCalls = userID => {
     }
     userRepo = new UserRepository(userData);
     user = new User(userRepo.findUsersData(id));
+    hydration = new Hydration(user.id, hydrationData);
     loadHandler();
   });
 };
@@ -47,6 +52,8 @@ function loadHandler() {
     displayUserCard();
     showFirstName();
     compareStepGoal();
+    waterForTheDay();
+    waterForTheWeek();
 };
 
 
@@ -66,6 +73,31 @@ function compareStepGoal() {
     userStepsAverage.innerHTML = `Daily Step Goal: ${user.dailyStepGoal}`;
     overallStepsAverage.innerHTML = `Overall Step Goal: ${userRepo.avgStepGoal()}`;
 }
+
+function waterForTheDay() {
+  hydration.setUserHydrateData(hydrationData)
+  const waterToday = hydration.returnOuncesByDate(hydration.date)
+  todayWater.innerHTML = `Todays Hydration: ${waterToday}oz.`
+}
+
+function waterForTheWeek() {
+  let weeklyIntake = hydration.returnOuncesByWeek(hydration.date)
+  // weeklyIntake.date.forEach(currentDate => {
+  //   const singleDate = `<br/>
+  //   Date: ${currentDate} <br/>
+  //   Amount: ${currentDate.numOunces}`
+  //   weeksWater.innerHTML += singleDate
+  // })
+  // console.log(weeklyIntake)
+  return Object.keys(weeklyIntake).reduce((acc, key) => {
+    weeklyIntake[key].forEach(value => {
+      weeksWater.innerHTML = `Date: ${value.date}, Amount: ${value.numOunces}`
+    })
+
+      return acc
+  }, '')
+}
+
 
 // Event Listeners
 window.addEventListener("load", fetchApiCalls("load"));
