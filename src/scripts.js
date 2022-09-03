@@ -8,6 +8,8 @@ import User from './User';
 import apiCalls from './apiCalls';
 import Hydration from './Hydration';
 import hydrationData from './data/hydration-data';
+import Sleep from './Sleep';
+import sleepData from './data/sleep-data';
 
 // Query Selectors
 const userName = document.querySelector("#user-info-name");
@@ -20,9 +22,15 @@ const userStepsAverage = document.querySelector("#user-step-average");
 const overallStepsAverage = document.querySelector("#step-goal-average");
 const todayWater = document.querySelector("#user-hydration-daily");
 const weeksWater = document.querySelector("#user-hydration-weekly");
+const userSleptDaily = document.querySelector("#user-slept-daily");
+const userQualityDaily = document.querySelector("#user-quality-daily");
+const userSleptWeekly = document.querySelector("#user-slept-weekly");
+const userQualityWeekly = document.querySelector("#user-quality-weekly");
+const userSleptAllTime = document.querySelector("#user-slept-time");
+const userQualityAllTime = document.querySelector("#user-quality-time");
 
 // Instances
-let user, userRepo, hydration;
+let user, userRepo, hydration, sleep;
 
 // Functions
 const getRandomIndex = array => {
@@ -34,6 +42,7 @@ const fetchApiCalls = userID => {
     console.log(data);
     let userData = data[0].userData;
     let hydrationData = data[1].hydrationData;
+    let sleepData = data[2].sleepData;
     let id;
     if (userID === "load") {
       id = getRandomIndex(userData);
@@ -43,6 +52,7 @@ const fetchApiCalls = userID => {
     userRepo = new UserRepository(userData);
     user = new User(userRepo.findUsersData(id));
     hydration = new Hydration(user.id, hydrationData);
+    sleep = new Sleep(user.id, sleepData);
     loadHandler();
   });
 };
@@ -54,8 +64,13 @@ function loadHandler() {
   compareStepGoal();
   waterForTheDay();
   waterForTheWeek();
+  showDailyHoursSlept();
+  // showDailyQuality();
+  // showWeeklyHoursSlept();
+  // showWeeklyQuality();
+  // showAllTimeHoursSlept();
+  // showAllTimeQuality();
 };
-
 
 function displayUserCard() {
   userName.innerHTML = `Name: ${user.name}`;
@@ -88,6 +103,20 @@ function waterForTheWeek() {
   });
 }
 
+function showDailyHoursSlept() {
+  let dailyHours = sleep.getHoursSleptPerDay(sleep.date);
+  userSleptDaily.innerHTML = `Today's Hours Slept: ${dailyHours}`;
+};
+
+// function showDailyQuality
+
+// function showWeeklyHoursSlept
+
+// function showWeeklyQuality
+
+// function showAllTimeHoursSlept
+
+// function showAllTimeQuality
 
 // Event Listeners
 window.addEventListener("load", fetchApiCalls("load"));

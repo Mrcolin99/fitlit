@@ -43,7 +43,7 @@ class Sleep{
   };
 
   getHoursSleptPerDay(date) {
-    let dailySleepHours = this.sleepData.find(sleep => {
+    let dailySleepHours = this.userSleepData.find(sleep => {
       return sleep.date === date;
     });
     return dailySleepHours.hoursSlept;
