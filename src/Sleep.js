@@ -7,7 +7,7 @@ class Sleep{
     this.date = sleepData[0].date;
     this.hoursSlept = sleepData[0].hoursSlept;
     this.sleepQuality = sleepData[0].sleepQuality;
-    this.sleepData = sleepData;
+    this.data = sleepData;
   }
 
   getUserSleepData(sleepData) {
@@ -16,59 +16,58 @@ class Sleep{
         return userSleepData;
       }
     });
-    userSleep.reverse();
     return userSleep;
   };
 
   getAverageSleepPerDay() {
-    const sleepPerDay = this.sleepData.map(sleep => {
+    const sleepPerDay = this.data.map(sleep => {
       return sleep.hoursSlept;
     })
     const sleepAvgPerDay = sleepPerDay.reduce((totalSleep, currentSleepHours) => {
       return totalSleep + currentSleepHours
     }, 0)
-    return Math.round(sleepAvgPerDay / this.sleepData.length);
+    return Math.round(sleepAvgPerDay / this.data.length);
   };
 
   getAverageQuality() {
-    const sleepQualPerDay = this.sleepData.map(sleep => {
+    const sleepQualPerDay = this.data.map(sleep => {
       return sleep.sleepQuality;
     })
     const sleepQualAvgPerDay = sleepQualPerDay.reduce((totalQuality, currentSleepQual) => {
       return totalQuality + currentSleepQual;
     }, 0)
     return Math.round(
-      (sleepQualAvgPerDay / this.sleepData.length + Number.EPSILON) * 10
+      (sleepQualAvgPerDay / this.data.length + Number.EPSILON) * 10
     ) / 10;
   };
 
   getHoursSleptPerDay(date) {
-    let dailySleepHours = this.sleepData.find(sleep => {
+    let dailySleepHours = this.userSleepData.find(sleep => {
       return sleep.date === date;
     });
     return dailySleepHours.hoursSlept;
   };
 
   getSleepQualityPerDay(date) {
-    let dailySleepQuality = this.sleepData.find(sleep => {
+    let dailySleepQuality = this.userSleepData.find(sleep => {
       return sleep.date === date;
     });
     return dailySleepQuality.sleepQuality;
   };
 
-  getSleepForTheWeek(startDate) {
+  getSleepForTheWeek(date) {
     const weekStartDate = this.userSleepData.findIndex(currentDate => {
-      return currentDate.date === startDate;
+      return currentDate.date === date;
     });
 
-    const weekData = this.userSleepData.slice(weekStartDate, weekStartDate + 7).reverse();
+    const weekData = this.userSleepData.slice(weekStartDate, weekStartDate + 7);
     const weeklySleep = {
       date: [],
       hoursSlept: []
     };
 
-    weeklySleep.date = weekData.map(startDate => startDate.date);
-    weeklySleep.hoursSlept = weekData.map(startDate => startDate.hoursSlept);
+    weeklySleep.date = weekData.map(date => date.date);
+    weeklySleep.hoursSlept = weekData.map(date => date.hoursSlept);
     return weeklySleep;
   };
 
@@ -77,7 +76,7 @@ class Sleep{
       return currentDate.date === startDate;
     });
 
-    const weekData = this.userSleepData.slice(weekStartDate, weekStartDate + 7).reverse();
+    const weekData = this.userSleepData.slice(weekStartDate, weekStartDate + 7);
     const weeklySleepQuality = {
       date: [],
       sleepQuality: []
@@ -88,15 +87,28 @@ class Sleep{
     return weeklySleepQuality;
   };
 
+  getAllHours() {
+    let totalHours = 0;
+    this.userSleepData.forEach(date => {
+      return(totalHours += date.hoursSlept);
+    });
+
+    const avgHours =
+    Math.round(
+      (totalHours / this.userSleepData.length + Number.EPSILON) * 10
+    ) / 10;
+    return avgHours;
+  };
+
   getAllQuality() {
     let totalQuality = 0;
-    this.sleepData.forEach(date => {
+    this.userSleepData.forEach(date => {
       return(totalQuality += date.sleepQuality);
     });
 
     const avgQuality =
     Math.round(
-      (totalQuality / this.sleepData.length + Number.EPSILON) * 10
+      (totalQuality / this.userSleepData.length + Number.EPSILON) * 10
     ) / 10;
     return avgQuality;
   };
