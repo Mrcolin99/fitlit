@@ -57,7 +57,7 @@ describe("Sleep", () => {
         expect(sleepQualityForADay).to.equal(1.2);
     });
 
-    it.skip("should be able to return the total hours slept in a week", () => {
+    it("should be able to return the total hours slept in a week", () => {
         const sleepForAWeek = userSleep.getSleepForTheWeek("2019/06/21");
         expect(sleepForAWeek).to.deep.equal({
             date: [
@@ -81,7 +81,7 @@ describe("Sleep", () => {
         });
     });
 
-    it.skip("should be able to return the total sleep quality for a week", () => {
+    it("should be able to return the total sleep quality for a week", () => {
         const sleepQualityForTheWeek = userSleep.getQualityForTheWeek("2019/06/21");
         expect(sleepQualityForTheWeek).to.deep.equal({
             date: [
@@ -105,8 +105,8 @@ describe("Sleep", () => {
         });
     });
 
-    it.skip("should return average sleep quality for all users", () => {
-        const allUserQuality = userSleep.getAllQuality()
+    it("should return average sleep quality for all users", () => {
+        const allUserQuality = userSleep.getAllQuality();
         expect(allUserQuality).to.equal(2.6)
     });
 });
