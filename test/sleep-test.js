@@ -32,7 +32,7 @@ describe("Sleep", () => {
         expect(userSleep.hoursSlept).to.equal(6.1);
     });
 
-    it.skip("should be able to return the quality of sleep", () => {
+    it("should be able to return the quality of sleep", () => {
         expect(userSleep.sleepQuality).to.equal(2.2);
     });
 
