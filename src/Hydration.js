@@ -15,31 +15,39 @@ class Hydration {
         return userHydrateData;
       }
     });
+
     userHydrate.reverse();
     return userHydrate;
   };
+
   returnDailyHydrateAvg() {
     const hydrationPerDay = this.data.map(hydration => {
       return hydration.numOunces;
-    })
+    });
+
     const hydrationAvgPerDay = hydrationPerDay.reduce((totalOunces, currentOunces) => {
       return totalOunces + currentOunces;
-    }, 0)
-    return Math.round(hydrationAvgPerDay / this.data.length)
+    }, 0);
+
+    return Math.round(hydrationAvgPerDay / this.data.length);
   };
+
   returnOuncesByDate(thisDate) {
     const ounceByDate = this.userHydrateData.find(({ date }) => date === thisDate);
     return ounceByDate.numOunces;
   };
+
   returnOuncesByWeek(date) {
     const startDate = this.userHydrateData.findIndex(currentDate => {
       return currentDate.date === date;
     });
+
     const weekData = this.userHydrateData.slice(startDate, startDate + 7).reverse();
     const weeklyIntake = {
       date: [],
       numOunces: []
     };
+
     weeklyIntake.date = weekData.map(date => date.date);
     weeklyIntake.numOunces = weekData.map(date => date.numOunces);
     return weeklyIntake;
