@@ -1,6 +1,7 @@
 import { expect } from "chai";
+import Sleep from "../src/sleep.js";
 import sleepData from "../src/data/sleep-data";
-import Sleep from "../src/sleep.js"
+
 
 const mockSleepData = sleepData;
 
@@ -36,7 +37,7 @@ describe("Sleep", () => {
         expect(userSleep.sleepQuality).to.equal(2.2);
     });
 
-    it.skip("shoukd be able to return the average hours of sleep per day", () => {
+    it("should be able to return the average hours of sleep per day", () => {
         const averageSleepPerDay = userSleep.getAverageSleepPerDay();
         expect(averageSleepPerDay).to.equal(8);
     });
