@@ -47,7 +47,7 @@ describe("Sleep", () => {
         expect(averageQualitySleep).to.equal(2.6);
     });
 
-    it.skip("should be able to return hours slept on a specific day", () => {
+    it("should be able to return hours slept on a specific day", () => {
         const sleepForADay = userSleep.getHoursSleptPerDay("2019/06/20");
         expect(sleepForADay).to.equal(9.3);
     });
