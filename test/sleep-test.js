@@ -1,5 +1,10 @@
 import { expect } from "chai";
-import Sleep from "../src/data/sleep-data";
+import Sleep from "../src/sleep.js";
+import sleepData from "../src/data/sleep-data";
+
+
+const mockSleepData = sleepData;
+
 
 describe("Sleep", () => {
     let userSleep;
@@ -8,51 +13,51 @@ describe("Sleep", () => {
         userSleep = new Sleep(1, mockSleepData);
     });
 
-    it.skip("should be a function", () => {
+    it("should be a function", () => {
         expect(Sleep).to.be.a("function");
     });
 
-    it.skip("should be an instance of Sleep", () => {
+    it("should be an instance of Sleep", () => {
         expect(userSleep).to.be.an.instanceOf(Sleep);
     });
 
-    it.skip("should be able to store an ID", () => {
-        expect(userSleep).to.equal(1);
+    it("should be able to store an ID", () => {
+        expect(userSleep.userID).to.equal(1);
     });
 
-    it.skip("should be able to return a date", () => {
+    it("should be able to return a date", () => {
         expect(userSleep.date).to.equal("2019/06/15");
     });
 
-    it.skip("should be able to return hours slept", () => {
+    it("should be able to return hours slept", () => {
         expect(userSleep.hoursSlept).to.equal(6.1);
     });
 
-    it.skip("should be able to return the quality of sleep", () => {
+    it("should be able to return the quality of sleep", () => {
         expect(userSleep.sleepQuality).to.equal(2.2);
     });
 
-    it.skip("shoukd be able to return the average hours of sleep per day", () => {
+    it("should be able to return the average hours of sleep per day", () => {
         const averageSleepPerDay = userSleep.getAverageSleepPerDay();
         expect(averageSleepPerDay).to.equal(8);
     });
 
-    it.skip("should be able to return the average sleep quality per day", () => {
+    it("should be able to return the average sleep quality per day", () => {
         const averageQualitySleep = userSleep.getAverageQuality();
         expect(averageQualitySleep).to.equal(2.6);
     });
 
-    it.skip("should be able to return hours slept on a specific day", () => {
+    it("should be able to return hours slept on a specific day", () => {
         const sleepForADay = userSleep.getHoursSleptPerDay("2019/06/20");
         expect(sleepForADay).to.equal(9.3);
     });
 
-    it.skip("should be able to return sleep quality for a specific day", () => {
+    it("should be able to return sleep quality for a specific day", () => {
         const sleepQualityForADay = userSleep.getSleepQualityPerDay("2019/06/20");
         expect(sleepQualityForADay).to.equal(1.2);
     });
 
-    it.skip("should be able to return the total hours slept in a week", () => {
+    it("should be able to return the total hours slept in a week", () => {
         const sleepForAWeek = userSleep.getSleepForTheWeek("2019/06/21");
         expect(sleepForAWeek).to.deep.equal({
             date: [
@@ -76,7 +81,7 @@ describe("Sleep", () => {
         });
     });
 
-    it.skip("should be able to return the total sleep quality for a week", () => {
+    it("should be able to return the total sleep quality for a week", () => {
         const sleepQualityForTheWeek = userSleep.getQualityForTheWeek("2019/06/21");
         expect(sleepQualityForTheWeek).to.deep.equal({
             date: [
@@ -100,8 +105,8 @@ describe("Sleep", () => {
         });
     });
 
-    it.skip("should return average sleep quality for all users", () => {
-        const allUserQuality = userSleep.getAllQuality()
+    it("should return average sleep quality for all users", () => {
+        const allUserQuality = userSleep.getAllQuality();
         expect(allUserQuality).to.equal(2.6)
     });
 });
