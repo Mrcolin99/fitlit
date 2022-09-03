@@ -1,13 +1,21 @@
 # FITLIT!
 
-Group Members -
+We are students at Turing School of Software & Design, and this is Part One of our group project for our second inning of the program.
+
+*Group Members*
 - Dana Chapman (They/She)
 - Jeffrey Cook (He/Him)
 - Colin Ciervo (He/Him)
 
+With this project we are creating a wellness tracker called **FitLit** that shares a user's account information, their step goals, hydration intake, and sleep statistics. Our major foci were implementing ES6 classes that communicate with one another, utilizing newly learned object and array prototype methods to perform data manipulation, implementing test suites to ensure Class functionality, and using network requests via `.fetch()` for the first time, and more.
+
+Aside from implementation of Webpack from the starter repo we forked - [link to that repo here](https://github.com/turingschool-examples/fitlit-starter-kit) - and an initial data file to help us create the User and UserRepository files, we created everything ourselves by utlizing our personal strengths and everything we've learned in Turing so far, from HTML/CSS to JavaScript to the newly introduced network requests and iterator methods.
+
 [Link to Turing's FitLit Project Spec](https://frontend.turing.edu/projects/Fitlit-part-one.html)
 
 [Link to Group's Daily Retro Minutes](https://docs.google.com/document/d/1GyWFpG0hR6I5k_obBsS_9of9AtT1RyX9Q5Hht21H0o8/edit?usp=sharing)
+
+<!-- Insert Gif of Comp Here -->
 
 ## Set-up for your Local Machine
 
@@ -39,6 +47,7 @@ Webpack is kept in the *dist* folder along with our `index.html`.
 ## Future Features
 
 1. Implementing `chart.js` for future graphical representations of user data.
+2. Either adding a dropdown menu or a filter-user button to manually choose a user's information to view on the page, instead of needing to reload the entire page for the changes to take effect.
 
 ## Celebrations & Challenges
 
