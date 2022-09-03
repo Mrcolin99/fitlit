@@ -87,15 +87,28 @@ class Sleep{
     return weeklySleepQuality;
   };
 
+  getAllHours() {
+    let totalHours = 0;
+    this.userSleepData.forEach(date => {
+      return(totalHours += date.hoursSlept);
+    });
+
+    const avgHours =
+    Math.round(
+      (totalHours / this.userSleepData.length + Number.EPSILON) * 10
+    ) / 10;
+    return avgHours;
+  };
+
   getAllQuality() {
     let totalQuality = 0;
-    this.data.forEach(date => {
+    this.userSleepData.forEach(date => {
       return(totalQuality += date.sleepQuality);
     });
 
     const avgQuality =
     Math.round(
-      (totalQuality / this.data.length + Number.EPSILON) * 10
+      (totalQuality / this.userSleepData.length + Number.EPSILON) * 10
     ) / 10;
     return avgQuality;
   };

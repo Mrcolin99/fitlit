@@ -66,9 +66,9 @@ function loadHandler() {
   showDailyHoursSlept();
   showDailyQuality();
   showWeeklyHoursSlept();
-  // showWeeklyQuality();
-  // showAllTimeHoursSlept();
-  // showAllTimeQuality();
+  showWeeklyQuality();
+  showAllTimeHoursSlept();
+  showAllTimeQuality();
 };
 
 function displayUserCard() {
@@ -120,11 +120,23 @@ function showWeeklyHoursSlept() {
   })
 }
 
-// function showWeeklyQuality
+function showWeeklyQuality() {
+  const weeklySleepQuality = sleep.getQualityForTheWeek(sleep.date);
+  userQualityWeekly.innerHTML = `This Week's Sleep Quality: <br/>`
+  weeklySleepQuality.date.forEach((value, i) => {
+    userQualityWeekly.innerHTML += `Date: ${value}, Quality: ${weeklySleepQuality.sleepQuality[i]} <br/>`
+  })
+}
 
-// function showAllTimeHoursSlept
+function showAllTimeHoursSlept() {
+  const allTimeHours = sleep.getAllHours();
+  userSleptAllTime.innerHTML = `All Times Hours Slept: ${allTimeHours}`;
+}
 
-// function showAllTimeQuality
+function showAllTimeQuality() {
+  const allTimeQuality = sleep.getAllQuality();
+  userQualityAllTime.innerHTML = `All Time Sleep Quality: ${allTimeQuality}`;
+}
 
 // Event Listeners
 window.addEventListener("load", fetchApiCalls("load"));
