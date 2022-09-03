@@ -8,7 +8,7 @@ class Sleep{
     this.hoursSlept = sleepData[0].hoursSlept;
     this.sleepQuality = sleepData[0].sleepQuality;
     this.data = sleepData;
-  }
+  };
 
   getUserSleepData(sleepData) {
     const userSleep = sleepData.filter(userSleepData => {
@@ -16,26 +16,31 @@ class Sleep{
         return userSleepData;
       }
     });
+
     return userSleep;
   };
 
   getAverageSleepPerDay() {
     const sleepPerDay = this.data.map(sleep => {
       return sleep.hoursSlept;
-    })
+    });
+
     const sleepAvgPerDay = sleepPerDay.reduce((totalSleep, currentSleepHours) => {
-      return totalSleep + currentSleepHours
-    }, 0)
+      return totalSleep + currentSleepHours;
+    }, 0);
+
     return Math.round(sleepAvgPerDay / this.data.length);
   };
 
   getAverageQuality() {
     const sleepQualPerDay = this.data.map(sleep => {
       return sleep.sleepQuality;
-    })
+    });
+
     const sleepQualAvgPerDay = sleepQualPerDay.reduce((totalQuality, currentSleepQual) => {
       return totalQuality + currentSleepQual;
-    }, 0)
+    }, 0);
+
     return Math.round(
       (sleepQualAvgPerDay / this.data.length + Number.EPSILON) * 10
     ) / 10;
@@ -45,6 +50,7 @@ class Sleep{
     let dailySleepHours = this.userSleepData.find(sleep => {
       return sleep.date === date;
     });
+
     return dailySleepHours.hoursSlept;
   };
 
@@ -52,6 +58,7 @@ class Sleep{
     let dailySleepQuality = this.userSleepData.find(sleep => {
       return sleep.date === date;
     });
+    
     return dailySleepQuality.sleepQuality;
   };
 
