@@ -52,7 +52,7 @@ describe("Sleep", () => {
         expect(sleepForADay).to.equal(9.3);
     });
 
-    it.skip("should be able to return sleep quality for a specific day", () => {
+    it("should be able to return sleep quality for a specific day", () => {
         const sleepQualityForADay = userSleep.getSleepQualityPerDay("2019/06/20");
         expect(sleepQualityForADay).to.equal(1.2);
     });
