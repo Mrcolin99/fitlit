@@ -20,8 +20,8 @@ describe("Sleep", () => {
         expect(userSleep).to.be.an.instanceOf(Sleep);
     });
 
-    it.skip("should be able to store an ID", () => {
-        expect(userSleep).to.equal(1);
+    it("should be able to store an ID", () => {
+        expect(userSleep.userID).to.equal(1);
     });
 
     it.skip("should be able to return a date", () => {
