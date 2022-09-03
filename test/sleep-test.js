@@ -42,7 +42,7 @@ describe("Sleep", () => {
         expect(averageSleepPerDay).to.equal(8);
     });
 
-    it.skip("should be able to return the average sleep quality per day", () => {
+    it("should be able to return the average sleep quality per day", () => {
         const averageQualitySleep = userSleep.getAverageQuality();
         expect(averageQualitySleep).to.equal(2.6);
     });
