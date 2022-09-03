@@ -11,33 +11,35 @@
       <button class="nav-link disabled" disabled>Dashboard</button>
     </nav>
     <section class="main-body">
-      <section class="user-main left-column">
+      <article class="user-main left-column">
           <h3 class="user-info center-text">My Information</h3>
           <p class="user-name" id="user-info-name"></p>
           <p class="user-address" id="user-info-address"></p>
           <p class="user-email" id="user-info-email"></p>
           <p class="user-stride" id="user-info-stride"></p>
           <p class="user-friends" id="user-info-friends"></p>
-      </section>
-      <section class="user-steps right-column">
+      </article>
+      <article class="user-steps right-column">
           <h3 class="step-info center-text">User's Step Goal</h3>
           <p class="step-goal" id="user-step-average"></p> 
           <p class="step-goal-comparison" id="step-goal-average"></p>
-      </section>
-      <section class="user-hydration left-column">
+      </article>
+      <article class="user-hydration left-column">
           <h3 class="hydration-info center-text">User's Hydration</h3>
           <p class="hydration-daily" id="user-hydration-daily"></p>
           <p class="hydration-weekly" id="user-hydration-weekly"></p>
-      </section>
-      <section class="user-sleep right-column">
-          <h3 class="sleep-info center-text">User's Sleep</h3>
-          <p class="sleep-daily" id="user-slept-daily"></p>
-          <p class="sleep-daily" id="user-quality-daily"></p>
-          <p class="sleep-weekly" id="user-slept-weekly"></p>
-          <p class="sleep-weekly" id="user-quality-weekly"></p>
-          <p class="sleep-all-time" id="user-slept-time"></p>
-          <p class="sleep-all-time" id="user-quality-time"></p>
-      </section>
+      </article>
+      <article class="user-sleep right-column">
+          <section class="sleep-box">
+            <h3 class="sleep-info center-text">User's Sleep</h3>
+            <p class="sleep-daily" id="user-slept-daily"></p>
+            <p class="sleep-daily" id="user-quality-daily"></p>
+            <p class="sleep-weekly" id="user-slept-weekly"></p>
+            <p class="sleep-weekly" id="user-quality-weekly"></p>
+            <p class="sleep-all-time" id="user-slept-time"></p>
+            <p class="sleep-all-time" id="user-quality-time"></p>
+          </section>
+      </article>
     </section>
 <!-- Do not include the scripts.js file here - it is done automatically by the webpack server -->
     <script src="bundle.js"></script>
