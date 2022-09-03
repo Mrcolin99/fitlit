@@ -58,7 +58,7 @@ describe("Sleep", () => {
     });
 
     it("should be able to return the total hours slept in a week", () => {
-        const sleepForAWeek = userSleep.getSleepForTheWeek("2019/06/21");
+        const sleepForAWeek = userSleep.getSleepForTheWeek("2019/06/15");
         expect(sleepForAWeek).to.deep.equal({
             date: [
                 "2019/06/15",
@@ -82,7 +82,7 @@ describe("Sleep", () => {
     });
 
     it("should be able to return the total sleep quality for a week", () => {
-        const sleepQualityForTheWeek = userSleep.getQualityForTheWeek("2019/06/21");
+        const sleepQualityForTheWeek = userSleep.getQualityForTheWeek("2019/06/15");
         expect(sleepQualityForTheWeek).to.deep.equal({
             date: [
                 "2019/06/15",

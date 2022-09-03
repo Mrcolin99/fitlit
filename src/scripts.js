@@ -1,5 +1,3 @@
-// This is the JavaScript entry file - your code begins here
-// Do not delete or rename this file ********
 // Imports
 import './css/styles.css';
 import './images/turing-logo.png'
@@ -9,7 +7,6 @@ import apiCalls from './apiCalls';
 import Hydration from './Hydration';
 import hydrationData from './data/hydration-data';
 import Sleep from './Sleep';
-import sleepData from './data/sleep-data';
 
 // Query Selectors
 const userName = document.querySelector("#user-info-name");
@@ -43,20 +40,22 @@ const fetchApiCalls = userID => {
     let hydrationData = data[1].hydrationData;
     let sleepData = data[2].sleepData;
     let id;
+
     if (userID === "load") {
       id = getRandomIndex(userData);
     } else {
       id = userID;
     }
+
     userRepo = new UserRepository(userData);
     user = new User(userRepo.findUsersData(id));
     hydration = new Hydration(user.id, hydrationData);
     sleep = new Sleep(user.id, sleepData);
+    
     loadHandler();
   });
 };
 
-// Load Handlers
 function loadHandler() {
   displayUserCard();
   showFirstName();
