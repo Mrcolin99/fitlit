@@ -49,6 +49,13 @@ class Sleep{
     return dailySleepHours.hoursSlept;
   };
 
+  getSleepQualityPerDay(date) {
+    let dailySleepQuality = this.sleepData.find(sleep => {
+      return sleep.date === date;
+    });
+    return dailySleepQuality.sleepQuality;
+  };
+
 };
 
 export default Sleep;
