@@ -56,6 +56,50 @@ class Sleep{
     return dailySleepQuality.sleepQuality;
   };
 
+  getSleepForTheWeek(startDate) {
+    const weekStartDate = this.userSleepData.findIndex(currentDate => {
+      return currentDate.date === startDate;
+    });
+
+    const weekData = this.userSleepData.slice(weekStartDate, weekStartDate + 7).reverse();
+    const weeklySleep = {
+      date: [],
+      hoursSlept: []
+    };
+
+    weeklySleep.date = weekData.map(startDate => startDate.date);
+    weeklySleep.hoursSlept = weekData.map(startDate => startDate.hoursSlept);
+    return weeklySleep;
+  };
+
+  getQualityForTheWeek(startDate) {
+    const weekStartDate = this.userSleepData.findIndex(currentDate => {
+      return currentDate.date === startDate;
+    });
+
+    const weekData = this.userSleepData.slice(weekStartDate, weekStartDate + 7).reverse();
+    const weeklySleepQuality = {
+      date: [],
+      sleepQuality: []
+    };
+
+    weeklySleepQuality.date = weekData.map(startDate => startDate.date);
+    weeklySleepQuality.sleepQuality = weekData.map(startDate => startDate.sleepQuality);
+    return weeklySleepQuality;
+  };
+
+  getAllQuality() {
+    let totalQuality = 0;
+    this.sleepData.forEach(date => {
+      return(totalQuality += date.sleepQuality);
+    });
+
+    const avgQuality =
+    Math.round(
+      (totalQuality / this.sleepData.length + Number.EPSILON) * 10
+    ) / 10;
+    return avgQuality;
+  };
 };
 
 export default Sleep;
