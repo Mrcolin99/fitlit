@@ -24,7 +24,7 @@ describe("Sleep", () => {
         expect(userSleep.userID).to.equal(1);
     });
 
-    it.skip("should be able to return a date", () => {
+    it("should be able to return a date", () => {
         expect(userSleep.date).to.equal("2019/06/15");
     });
 
