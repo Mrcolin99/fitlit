@@ -9,13 +9,14 @@ We are students at Turing School of Software & Design, and this is Part One of o
 
 With this project we are creating a wellness tracker called **FitLit** that shares a user's account information, their step goals, hydration intake, and sleep statistics. Our major foci were implementing ES6 classes that communicate with one another, utilizing newly learned object and array prototype methods to perform data manipulation, implementing test suites to ensure Class functionality, and using network requests via `.fetch()` for the first time, and more.
 
-Aside from implementation of Webpack from the starter repo we forked - [link to that repo here](https://github.com/turingschool-examples/fitlit-starter-kit) - and an initial data file to help us create the User and UserRepository files, we created everything ourselves by utlizing our personal strengths and everything we've learned in Turing so far, from HTML/CSS to JavaScript to the newly introduced network requests and iterator methods.
+Aside from implementation of Webpack from the starter repo we forked - [link to that repo here](https://github.com/turingschool-examples/fitlit-starter-kit) - and an initial data file to help us create the User and UserRepository files, we created everything ourselves by utlizing our personal strengths and everything we've learned in Turing thus far.
 
 [Link to Turing's FitLit Project Spec](https://frontend.turing.edu/projects/Fitlit-part-one.html)
 
 [Link to Group's Daily Retro Minutes](https://docs.google.com/document/d/1GyWFpG0hR6I5k_obBsS_9of9AtT1RyX9Q5Hht21H0o8/edit?usp=sharing)
 
-<!-- Insert Gif of Comp Here -->
+<!-- Placeholder Gif -->
+![gif of GitLit web page scrolling up and down](https://media.giphy.com/media/EvPI8mfauNUGi9nz74/giphy.gif)
 
 ## Set-up for your Local Machine
 
