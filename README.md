@@ -15,8 +15,7 @@ Aside from implementation of Webpack from the starter repo we forked - [link to 
 
 [Link to Group's Daily Retro Minutes](https://docs.google.com/document/d/1GyWFpG0hR6I5k_obBsS_9of9AtT1RyX9Q5Hht21H0o8/edit?usp=sharing)
 
-<!-- Placeholder Gif -->
-![gif of GitLit web page scrolling up and down](https://media.giphy.com/media/EvPI8mfauNUGi9nz74/giphy.gif)
+![gif of GitLit web page scrolling up and down](https://media.giphy.com/media/rI7LTREut57wlWZ0St/giphy.gif)
 
 ## Set-up for your Local Machine
 
