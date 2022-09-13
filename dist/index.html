@@ -30,7 +30,7 @@
           <p class="hydration-weekly" id="user-hydration-weekly"></p>
       </article>
       <article class="user-sleep right-column">
-          <section class="sleep-box">
+          <section class="box">
             <h3 class="sleep-info center-text">User's Sleep</h3>
             <p class="sleep-daily" id="user-slept-daily"></p>
             <p class="sleep-daily" id="user-quality-daily"></p>
@@ -39,6 +39,46 @@
             <p class="sleep-all-time" id="user-slept-time"></p>
             <p class="sleep-all-time" id="user-quality-time"></p>
           </section>
+      </article>
+      <article class="user-activity left-column">
+        <section class="box">
+          <h3 class="activity-info center-text">User's Activity</h3>
+          <p class="activity-daily" id="user-activity-steps-daily">Steps per Day</p>
+          <p class="activity-daily" id="user-activity-minutes-daily">Minutes Active</p>
+          <p class="activity-daily" id="user-activity-distance-daily">Distance by Stride</p>
+          <p class="activity-compare" id="user-activity-compare-steps">Compare Steps</p>
+          <p class="activity-compare" id="user-activity-compare-minutes">Compare Minutes Active</p>
+          <p class="activity-compare" id="user-activity-compare-distance">Compare Stairs</p>
+          <p class="activity-weekly" id="user-activity-steps-weekly">Weekly Steps</p>
+          <p class="activity-weekly" id="user-activity-minutes-weekly">Weekly Minutes Active</p>
+          <p class="activity-weekly" id="user-activity-distance-weekly">Weekly Stairs</p>
+        </section>
+      </article>
+      <article class="new-user-data right-column">
+        <section class="box">
+          <h3 class="enter-data center-text">Add New Data</h3>
+          <form class="activity-data container">
+            <h4 class="activity title">Activity</h4>
+            <label class="activity-date"><input class="activity-date-entry field" type="text" name="date-input" id="activity-date-input"> Enter Date</label>
+            <label class="activity-steps"><input class="activity-steps-entry field" type="text" name="steps-input" id="activity-steps-input"> Enter Steps</label>
+            <label class="activity-minutes"><input class="activity-minutes-entry field" type="text" name="minutes-input" id="activity-minutes-input"> Enter Minutes Active</label>
+            <label class="activity-distance"><input class="activity-distance-entry field" type="text" name="distance-input" id="activity-distance-input"> Enter Distance</label>
+            <input class="activity-submission form-submit" type="submit" name="activity-button" id="activity-submit-button">
+          </form>
+          <form class="hydration-data container">
+            <h4 class="hydration title">Hydration</h4>
+            <label class="hydration-date"><input class="hydration-date-entry field" type="text" name="date-input" id="hydration-date-input"> Enter Date</label>
+            <label class="hydration-intake"><input class="hydration-intake-entry field" type="text" name="intake-input" id="hydration-intake-input"> Enter Intake</label>
+            <input class="hydration-submission form-submit" type="submit" name="hydration-button" id="hydration-submit-button">
+          </form>
+          <form class="sleep-data container">
+            <h4 class="sleep title">Sleep</h4>
+            <label class="sleep-date"><input class="sleep-date-entry field" type="text" name="date-input" id="sleep-date-input"> Enter Date</label>
+            <label class="sleep-hours"><input class="sleep-hours-entry field" type="text" name="hours-input" id="sleep-hours-input"> Enter Hours Slept</label>
+            <label class="sleep-quality"><input class="sleep-quality-entry field" type="text" name="quality-input" id="sleep-quality-input"> Enter Sleep Quality</label>
+            <input class="sleep-submission form-submit" type="submit" name="sleep-button" id="sleep-submit-button">
+          </form>
+        </section>
       </article>
     </section>
     <script src="bundle.js"></script>
