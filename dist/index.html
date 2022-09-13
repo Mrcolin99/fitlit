@@ -30,7 +30,7 @@
           <p class="hydration-weekly" id="user-hydration-weekly"></p>
       </article>
       <article class="user-sleep right-column">
-          <section class="sleep-box">
+          <section class="box">
             <h3 class="sleep-info center-text">User's Sleep</h3>
             <p class="sleep-daily" id="user-slept-daily"></p>
             <p class="sleep-daily" id="user-quality-daily"></p>
@@ -41,7 +41,7 @@
           </section>
       </article>
       <article class="user-activity left-column">
-        <section class="activity-box">
+        <section class="box">
           <h3 class="activity-info center-text">User's Activity</h3>
           <p class="activity-daily" id="user-activity-steps-daily">Steps per Day</p>
           <p class="activity-daily" id="user-activity-minutes-daily">Minutes Active</p>
@@ -52,7 +52,23 @@
           <p class="activity-weekly" id="user-activity-steps-weekly">Weekly Steps</p>
           <p class="activity-weekly" id="user-activity-minutes-weekly">Weekly Minutes Active</p>
           <p class="activity-weekly" id="user-activity-distance-weekly">Weekly Stairs</p>
-          <!-- Add New Data -->
+        </section>
+      </article>
+      <article class="new-user-data right-column">
+        <section class="box">
+          <h3 class="enter-data center-text">Add New Data</h3>
+          <form class="activity-data">
+            <h4 class="activity-title">Activity</h4>
+            <label class="activity-date"><input class="activity-date-entry" type="text" name="date-input" id="activity-date-input"> Enter Date</label>
+            <label class="activity-steps"><input class="activity-steps-entry" type="text" name="steps-input" id="activity-steps-input"> Enter Steps</label>
+            <label class="activity-minutes"><input class="activity-minutes-entry" type="text" name="minutes-input" id="activity-minutes-input"> Enter Minutes Active</label>
+            <label class="activity-distance"><input class="activity-distance" type="text" name="distance-input" id="activity-distance-input"> Enter Distance</label>
+          </form>
+          <form class="hydration-data">
+            <h4 class="hydration-title">Hydration</h4>
+
+          </form>
+          <h4 class="sleep-data">Sleep</h4>
         </section>
       </article>
     </section>
